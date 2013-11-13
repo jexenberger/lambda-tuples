@@ -2,42 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3c2426-92ca-46c5-bd57-55b487346970" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DataAccessException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/HSQLBootStrap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/LambdaTuplesContext.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Pair.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetIterator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQLBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLBuilderTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Tuple.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/TupleTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ConverterService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/ConverterServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/ConverterTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Converters.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/TypeTransformer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Tuple.java" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DefaultTuple.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/TupleTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/DefaultTupleTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DataAccessException.java" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DataAccessException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetIterator.java" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetIterator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java" afterPath="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lambdatuples.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384173503088" ignored="false" />
-    <file path="/TupleTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384103267311" ignored="false" />
+    <file path="/Dummy.txt" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384318210745" ignored="false" />
+    <file path="/TupleTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384361669069" ignored="false" />
     <file path="$USER_HOME$/work/git/VitalityInternational-Integration/VitalityInternational/Source/LambdaTuples/src/main/java/org/lambdatuples/SQL.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384103632529" ignored="false" />
-    <file path="/SQLTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384160817358" ignored="false" />
+    <file path="/SQLTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384319939143" ignored="false" />
     <file path="/ResultSetStream.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104607240" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/String.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267686" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/ReferencePipeline.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267686" ignored="false" />
-    <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Arrays.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267686" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/function/Supplier.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267686" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Iterable.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267686" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/List.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267687" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/AbstractPipeline.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267687" ignored="false" />
     <file path="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Optional.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104267687" ignored="false" />
     <file path="$USER_HOME$/work/git/VitalityInternational-Integration/VitalityInternational/Source/LambdaTuples/src/test/java/org/lambdatuples/SQLTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384104269462" ignored="false" />
-    <file path="/SQL.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384111574222" ignored="false" />
-    <file path="/Tuple.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384161224775" ignored="false" />
+    <file path="/SQL.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384343505363" ignored="false" />
+    <file path="/Tuple.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384322858636" ignored="false" />
     <file path="/ResultSetIterator.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384110512266" ignored="false" />
     <file path="$USER_HOME$/work/VitalityInternational-Integration/VitalityInternational/Source/Java/CommonFramework/domain/src/main/java/za/co/discovery/vitalityint/domain/businessevent/BusinessEvent.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384173707891" ignored="false" />
     <file path="/BusinessEvent.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384173692185" ignored="false" />
     <file path="$USER_HOME$/work/b2b/VitalityInternational-B2B-Master/VitalityInternational/Source/Java/b2b-service/src/main/java/za/co/discovery/vitalityint/builder/GlobalRouteBuilder.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384173988163" ignored="false" />
     <file path="/GlobalRouteBuilder.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384173891074" ignored="false" />
+    <file path="/DataAccessException.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384318567582" ignored="false" />
+    <file path="/Converters.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384360486500" ignored="false" />
+    <file path="/ConverterTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384320907758" ignored="false" />
+    <file path="/Converter.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384321759918" ignored="false" />
+    <file path="/TypeConversion.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384328918711" ignored="false" />
+    <file path="/ConverterService.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384371482538" ignored="false" />
+    <file path="/ConverterServiceTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384360785665" ignored="false" />
+    <file path="/TypeTransformer.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384341699468" ignored="false" />
+    <file path="/DefaultTuple.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384372568865" ignored="false" />
+    <file path="/DefaultTupleTest.java" changelist="da3c2426-92ca-46c5-bd57-55b487346970" time="1384371952715" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +62,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -89,6 +98,39 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/DefaultTuple.java" line="45" class="org.github.lambatuples.DefaultTuple" package="org.github.lambatuples">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/ConverterService.java" line="97" class="org.github.lambatuples.ConverterService" package="org.github.lambatuples">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -98,76 +140,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SQL.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java">
+      <file leaf-file-name="DefaultTuple.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/DefaultTuple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
+            <state line="195" column="41" selection-start="5950" selection-end="5950" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Collector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/Collector.java">
+      <file leaf-file-name="Arrays.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="17" selection-start="8975" selection-end="8975" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#15354#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Collectors.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="17" selection-start="5264" selection-end="5264" vertical-scroll-proportion="0.0">
+            <state line="2371" column="22" selection-start="111528" selection-end="111528" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SQLBuilder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQLBuilder.java">
+      <file leaf-file-name="Stream.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="3133" selection-end="3133" vertical-scroll-proportion="0.0">
+            <state line="804" column="12" selection-start="35937" selection-end="35937" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tuple.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/Tuple.java">
+      <file leaf-file-name="DefaultTupleTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/DefaultTupleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="32" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+            <state line="120" column="59" selection-start="4007" selection-end="4007" vertical-scroll-proportion="0.6749226">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/AbstractList.java">
+      <file leaf-file-name="ConverterServiceTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/ConverterServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="22" selection-start="2158" selection-end="2158" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LambdaTuplesContext.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/LambdaTuplesContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SQLTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="61" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.75922954">
+            <state line="35" column="55" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,20 +187,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParentRunner.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
+      <file leaf-file-name="ConverterService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/ConverterService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="-7.48">
+            <state line="36" column="55" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4374#5068#0" expanded="true" />
+                <element signature="e#5053#5054#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="6" selection-start="4525" selection-end="4525" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockJUnit4ClassRunner.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <file leaf-file-name="Long.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Long.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="19" selection-start="420" selection-end="420" vertical-scroll-proportion="-4.8">
+            <state line="73" column="70" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#61420#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1719#1749#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Class.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Class.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2295" column="27" selection-start="96241" selection-end="96241" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Converters.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/Converters.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="29" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -211,19 +260,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Pair.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/TupleTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/LambdaTuplesContext.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DataAccessException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQLBuilder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/HSQLBootStrap.java" />
-        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLBuilderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetIterator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Tuple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DataAccessException.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/ConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Converter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Tuple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/TypeConversion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/TypeTransformer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/Converters.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/ConverterServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/TupleTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/ConverterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/github/lambatuples/DefaultTuple.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/github/lambatuples/DefaultTupleTest.java" />
       </list>
     </option>
   </component>
@@ -292,8 +344,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -366,6 +416,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,12 +436,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.SQLTest.testStream">
-    <configuration default="false" name="TupleTest" type="JUnit" factoryName="JUnit" temporary="true">
+  <component name="RunManager" selected="JUnit.DefaultTupleTest.testSubSet">
+    <configuration default="false" name="ConverterServiceTest.testTransform" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="org.github.lambatuples.*" />
@@ -400,7 +452,41 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.github.lambatuples" />
-      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.TupleTest" />
+      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.ConverterServiceTest" />
+      <option name="METHOD_NAME" value="testTransform" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DefaultTupleTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.github.lambatuples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="lambdatuples" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.github.lambatuples" />
+      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.DefaultTupleTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -413,11 +499,17 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="org.github.lambatuples in lambdatuples" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="DefaultTupleTest.testAsInt" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="org.github.lambatuples.*" />
@@ -428,9 +520,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.github.lambatuples" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.DefaultTupleTest" />
+      <option name="METHOD_NAME" value="testAsInt" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -445,7 +537,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="SQLTest.testStream" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="DefaultTupleTest.testAsBoolean" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
           <option name="PATTERN" value="org.github.lambatuples.*" />
@@ -456,8 +548,36 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="org.github.lambatuples" />
-      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.SQLTest" />
-      <option name="METHOD_NAME" value="testStream" />
+      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.DefaultTupleTest" />
+      <option name="METHOD_NAME" value="testAsBoolean" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DefaultTupleTest.testSubSet" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.github.lambatuples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="lambdatuples" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.github.lambatuples" />
+      <option name="MAIN_CLASS_NAME" value="org.github.lambatuples.DefaultTupleTest" />
+      <option name="METHOD_NAME" value="testSubSet" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -536,16 +656,20 @@
       <patterns />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TupleTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.org.github.lambatuples in lambdatuples" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SQLTest.testStream" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.ConverterServiceTest.testTransform" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest.testAsInt" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest.testAsBoolean" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest.testSubSet" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SQLTest.testStream" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.org.github.lambatuples in lambdatuples" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TupleTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest.testSubSet" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest.testAsBoolean" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DefaultTupleTest.testAsInt" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ConverterServiceTest.testTransform" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -599,8 +723,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6706468" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6706468" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6706468" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -673,124 +797,132 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Spliterator.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="17" selection-start="13613" selection-end="13613" vertical-scroll-proportion="0.0">
+        <state line="41" column="17" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Spliterators.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/TypeTransformer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="499" column="49" selection-start="23773" selection-end="23773" vertical-scroll-proportion="0.0">
+        <state line="13" column="5" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/HSQLBootStrap.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Boolean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="22" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0">
+        <state line="149" column="22" selection-start="4614" selection-end="4614" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#11033#0" expanded="false" />
+            <element signature="e#1299#1329#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/ResultSetIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="19" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="388" selection-end="388" vertical-scroll-proportion="-6.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/statements/RunAfters.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="612" selection-end="612" vertical-scroll-proportion="-7.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="2400" selection-end="2400" vertical-scroll-proportion="-7.48">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="420" selection-end="420" vertical-scroll-proportion="-4.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQLBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="3133" selection-end="3133" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="17" selection-start="5264" selection-end="5264" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/Collector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="17" selection-start="8975" selection-end="8975" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#15354#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/Tuple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="32" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/AbstractList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="22" selection-start="2158" selection-end="2158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/LambdaTuplesContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/SQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
+        <state line="92" column="51" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/SQLTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/Pair.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="61" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.75922954">
+        <state line="20" column="34" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="19" selection-start="589" selection-end="589" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#10204#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="70" selection-start="1820" selection-end="1820" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#61420#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1719#1749#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2295" column="27" selection-start="96241" selection-end="96241" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/Converters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="29" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/ConverterServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="55" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="6" selection-start="4525" selection-end="4525" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/ConverterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="55" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4374#5068#0" expanded="true" />
+            <element signature="e#5053#5054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="804" column="12" selection-start="35937" selection-end="35937" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2371" column="22" selection-start="111528" selection-end="111528" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/github/lambatuples/DefaultTuple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="195" column="41" selection-start="5950" selection-end="5950" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/github/lambatuples/DefaultTupleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="59" selection-start="4007" selection-end="4007" vertical-scroll-proportion="0.6749226">
+          <folding />
         </state>
       </provider>
     </entry>
