@@ -52,7 +52,7 @@ public class SQLTest extends HSQLBootStrap {
     @Test
     public void testStream() throws Exception {
         long result = stream(connection, SQL)
-                .filter((Tuple t) -> t.intVal("TEST_ID") % 2 == 0)
+                .filter((DefaultTuple t) -> t.asInt("TEST_ID") % 2 == 0)
                 .limit(100)
                 .count();
         System.out.println(result);

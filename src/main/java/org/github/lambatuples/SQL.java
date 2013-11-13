@@ -72,7 +72,7 @@ public class SQL {
 
     }
 
-    public static Tuple rowAsTuple(String sql, ResultSet rs) {
+    public static DefaultTuple rowAsTuple(String sql, ResultSet rs) {
         try {
             ResultSetMetaData metaData = rs.getMetaData();
             Pair<String, Integer>[] columns = null;
@@ -82,16 +82,16 @@ public class SQL {
                 }
             }
             columns = META_DATA_CACHE.get(sql);
-            List<Pair<String,?>> result = StreamSupport.stream(Spliterators.spliterator(columns, 0), false)
+            Collection result = StreamSupport.stream(Spliterators.spliterator(columns, 0), false)
                     .map((Object o) -> {
                         Pair<String, Integer> column = (Pair<String, Integer>) o;
                         try {
-                            return cons(column.getCar(), rs.getObject(column.getCar()));
+                            return cons(column.getCar(), Optional.of(rs.getObject(column.getCar())));
                         } catch (SQLException e) {
                             throw new DataAccessException(e);
                         }
-                    }).collect(Collectors.toList());
-            return new Tuple(result);
+                    }).collect( Collectors.toList());
+            return new DefaultTuple(result);
         } catch (SQLException e) {
             throw new DataAccessException(e);
         }
@@ -116,7 +116,7 @@ public class SQL {
     }
 
 
-    public static Stream<Tuple> stream(final Connection connection, final String sql, final Object... parms) {
+    public static Stream<DefaultTuple> stream(final Connection connection, final String sql, final Object... parms) {
 
         return StreamSupport.stream(Spliterators.spliteratorUnknownSize(new ResultSetIterator(connection, sql), 0), false);
     }

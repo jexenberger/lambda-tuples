@@ -14,7 +14,7 @@ import java.util.Iterator;
  * PROJECT: ${PROJECT}
  * DESCRIPTION:
  */
-public class ResultSetIterator implements Iterator<Tuple> {
+public class ResultSetIterator implements Iterator<DefaultTuple> {
 
     private ResultSet rs;
     private PreparedStatement ps;
@@ -70,7 +70,7 @@ public class ResultSetIterator implements Iterator<Tuple> {
     }
 
     @Override
-    public Tuple next() {
+    public DefaultTuple next() {
         return SQL.rowAsTuple(sql, rs);
     }
 }
