@@ -1,6 +1,8 @@
 *.class
 *.iml
 *.ipr
+*.idea
+workspace.xml
 
 # Package Files #
 *.jar
