@@ -274,7 +274,7 @@ public class SQL {
 
     }
 
-    public static Tuple rowAsTuple(String sql, ResultSet rs){
+    public static Tuple rowAsTuple(String sql, ResultSet rs) {
         try {
             ResultSetMetaData metaData = rs.getMetaData();
             Pair<String, Integer>[] columns = null;
@@ -288,12 +288,11 @@ public class SQL {
                     .map((Object o) -> {
                         Pair<String, Integer> column = (Pair<String, Integer>) o;
                         try {
-                            return cons(column.getCar(), Optional.ofNullable(rs.getObject(column.getCar())));
+                            return cons(column.getCar(), rs.getObject(column.getCar()));
                         } catch (SQLException e) {
                             throw new DataAccessException(e);
                         }
-                    }).collect( Collectors.toList());
-            //result.add(cons("row_id", Optional.of(rs.getRow())));
+                    }).collect(Collectors.toList());
             return new DefaultTuple(result);
         } catch (SQLException e) {
             throw new DataAccessException(e);
@@ -306,12 +305,12 @@ public class SQL {
         try {
             columnCount = rs.getColumnCount();
             Pair<String, Integer>[] columns = new Pair[columnCount];
-            StringBuilder builder = new StringBuilder();
             for (int i = 0; i < columnCount; i++) {
-                builder.append(rs.getSchemaName(i + 1));
-                builder.append(',').append(rs.getTableName(i + 1));
-                builder.append(',').append(rs.getColumnName(i + 1));
-                Integer type = rs.getColumnType(i+1);
+                StringBuilder builder = new StringBuilder();
+                builder.append(rs.getSchemaName(i + 1))
+                        .append('.').append(rs.getTableName(i + 1))
+                        .append('.').append(rs.getColumnName(i + 1));
+                Integer type = rs.getColumnType(i + 1);
                 columns[i] = cons(builder.toString(), type);
 
             }
