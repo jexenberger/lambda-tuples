@@ -203,84 +203,87 @@ Apache License
 */
 package org.github.lambatuples;
 
+import java.math.BigDecimal;
+import java.util.Optional;
+
 /**
- * Builder class for building SQL statements
+ * A Utility class for various type transformations
  * User: julian3
- * Date: 2013/11/10
- * Time: 7:16 PM
- * PROJECT: ${PROJECT}
+ * Date: 2013/11/13
+ * Time: 7:20 AM
+ * PROJECT: lambda tuples
  * DESCRIPTION:
  */
-public class SQLBuilder {
+public class Transformations {
 
+    static boolean toBoolean(String name, Optional<Object> val) {
+        return (boolean) val.map(o -> {
+            if ((o instanceof Boolean) || (o.getClass().isAssignableFrom(Boolean.TYPE))) {
+                return o;
+            } else {
+                boolean isAllowedType = o instanceof Character;
+                isAllowedType |= o.getClass().isAssignableFrom(Character.TYPE);
+                isAllowedType |= o instanceof String;
+                isAllowedType |= o instanceof Integer;
+                isAllowedType |= o.getClass().isAssignableFrom(Integer.TYPE);
+                isAllowedType |= o instanceof Long;
+                isAllowedType |= o.getClass().isAssignableFrom(Long.TYPE);
 
-    public static String insertInto(String schema, String tableName, String... columns) {
+                if (!isAllowedType) {
+                    throw new IllegalArgumentException("name cannot be converted to boolean as it is a " + val.get().getClass());
+                }
 
-        StringBuilder builder = new StringBuilder("INSERT INTO ").append(getTableName(schema, tableName)).append(" (");
-        for (String column : columns) {
-            builder.append(column).append(',');
-        }
-        builder.deleteCharAt(builder.length()-1).append(") VALUES (");
-        for (String column : columns) {
-            builder.append("?,");
-        }
-        builder.deleteCharAt(builder.length()-1).append(");");
-        return builder.toString();
-    }
+                return o.toString().equalsIgnoreCase("1") ||
+                        o.toString().equalsIgnoreCase("yes") ||
+                        o.toString().equalsIgnoreCase("true") ||
+                        o.toString().equalsIgnoreCase("y");
 
-
-
-    public static String update(String schema, String tableName, String whereColumn, String... columns) {
-        StringBuilder builder = new StringBuilder("UPDATE ").append(getTableName(schema, tableName)).append(" SET ");
-        for (String column : columns) {
-            builder.append(column).append("=?,");
-        }
-        return builder.deleteCharAt(builder.length()-1).append(" WHERE ").append(whereColumn).append("=?;").toString();
-    }
-
-    public static String selectWhere(String schema, String tableName, String operator, String... columns) {
-        StringBuilder builder = new StringBuilder("SELECT  * FROM ").append(getTableName(schema, tableName)).append(" WHERE ");
-        for (String column : columns) {
-            builder.append(column).append(" = ? ").append(operator);
-        }
-        return builder.toString();
-    }
-
-    public static String getTableName(String schema, String tableName) {
-        StringBuilder builder = new StringBuilder();
-        if (schema != null && !schema.trim().isEmpty()) {
-            builder.append(schema).append('.');
-        }
-        return builder.append(tableName).toString();
-    }
-
-
-    public static String createTable(String schema, String tableName,  Pair<String, Pair<String, Boolean>> ... columns) {
-        StringBuilder builder = new StringBuilder("CREATE TABLE ").append(getTableName(schema, tableName)).append("(\n");
-        for (Pair<String, Pair<String, Boolean>> column : columns) {
-            builder.append(column.getCar()).append(' ').append(column.getCdr().getCar());
-            if (column.getCdr().getCdr()) {
-                builder.append(" NOT NULL");
             }
-            builder.append(',');
+        }).orElse(false);
+    }
+
+    public static <T extends Number> T toNumber(Number number, Class<T> target) {
+        if (number == null) {
+            return null;
         }
-        return builder.deleteCharAt(builder.length()-1).append(");").toString();
+        try {
+            return target.getConstructor(String.class).newInstance(number.toString());
+        } catch (Exception e) {
+            throw new DataAccessException(e);
+        }
+    }
+
+    public static BigDecimal toBigDecimal(Number number) {
+        if (number == null) {
+            return null;
+        }
+        return new BigDecimal(number.toString());
+    }
+
+    public static Boolean toBoolean(String o) {
+        if (o == null) {
+            return false;
+        }
+
+        return o.toString().equalsIgnoreCase("1") ||
+                o.toString().equalsIgnoreCase("yes") ||
+                o.toString().equalsIgnoreCase("true") ||
+                o.toString().equalsIgnoreCase("y");
 
     }
 
-    public static String setPrimaryKey(String schema, String tableName, String primaryKeyName,  String... columns) {
-        StringBuilder builder = new StringBuilder("ALTER TABLE ")
-                .append(getTableName(schema, tableName))
-                .append('(')
-                .append("ADD CONSTRAINT ")
-                .append(primaryKeyName)
-                .append(" PRIMARY KEY (");
-        for (String column : columns) {
-            builder.append(column).append(",");
+    public static Boolean toBoolean(Character o) {
+        if (o == null) {
+            return false;
         }
+        return o.charValue() == '1' || o.charValue() == 'y' || o.charValue() == 'Y';
+    }
 
-        return builder.deleteCharAt(builder.length()-1).append(");").toString();
-
+    public static Boolean toBoolean(Number o) {
+        if (o == null) {
+            return false;
+        }
+        return o.intValue() == 1;
     }
 
 

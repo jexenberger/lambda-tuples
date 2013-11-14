@@ -203,85 +203,128 @@ Apache License
 */
 package org.github.lambatuples;
 
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.github.lambatuples.Pair.cons;
+
 /**
- * Builder class for building SQL statements
+ * Service for type transformation
  * User: julian3
- * Date: 2013/11/10
- * Time: 7:16 PM
+ * Date: 2013/11/13
+ * Time: 9:41 AM
  * PROJECT: ${PROJECT}
  * DESCRIPTION:
  */
-public class SQLBuilder {
+public class TransformerService {
 
+    static Map<Pair<Class<?>, Class<?>>, TypeTransformer<?, ?>> CONVERSION_REGISTRY;
 
-    public static String insertInto(String schema, String tableName, String... columns) {
-
-        StringBuilder builder = new StringBuilder("INSERT INTO ").append(getTableName(schema, tableName)).append(" (");
-        for (String column : columns) {
-            builder.append(column).append(',');
-        }
-        builder.deleteCharAt(builder.length()-1).append(") VALUES (");
-        for (String column : columns) {
-            builder.append("?,");
-        }
-        builder.deleteCharAt(builder.length()-1).append(");");
-        return builder.toString();
+    static {
+        registerConversion(String.class, Long.class, Long::valueOf);
+        registerConversion(String.class, Long.TYPE, Long::valueOf);
+        registerConversion(String.class, Integer.class, Integer::valueOf);
+        registerConversion(String.class, Integer.TYPE, Integer::valueOf);
+        registerConversion(String.class, Byte.class, Byte::valueOf);
+        registerConversion(String.class, Byte.TYPE, Byte::valueOf);
+        registerConversion(String.class, Short.class, Short::valueOf);
+        registerConversion(String.class, Short.TYPE, Short::valueOf);
+        registerConversion(String.class, Boolean.class, Transformations::toBoolean);
+        registerConversion(String.class, Boolean.TYPE, Transformations::toBoolean);
+        registerConversion(String.class, Float.class, Float::valueOf);
+        registerConversion(String.class, Float.TYPE, Float::valueOf);
+        registerConversion(String.class, Double.class, Double::valueOf);
+        registerConversion(String.class, Double.TYPE, Double::valueOf);
+        registerConversion(String.class, Character.class, (instance)-> (instance!= null) ? instance.charAt(0) : (char)(byte)0);
+        registerConversion(String.class, Character.TYPE, (instance)-> (instance!= null) ? instance.charAt(0) : (char)(byte)0);
+        registerConversion(String.class, Double.TYPE, Double::valueOf);
+        registerConversion(String.class, BigDecimal.class, BigDecimal::new);
+        registerConversion(Number.class, Long.class, (instance)-> Transformations.toNumber(instance, Long.class));
+        registerConversion(Number.class, Long.TYPE, (instance)-> Transformations.toNumber(instance, Long.class));
+        registerConversion(Number.class, Integer.class, (instance)-> Transformations.toNumber(instance, Integer.class));
+        registerConversion(Number.class, Integer.TYPE, (instance)-> Transformations.toNumber(instance, Integer.class));
+        registerConversion(Number.class, Byte.class, (instance)-> Transformations.toNumber(instance, Byte.class));
+        registerConversion(Number.class, Byte.TYPE, (instance)-> Transformations.toNumber(instance, Byte.class));
+        registerConversion(Number.class, Short.class, (instance)-> Transformations.toNumber(instance, Short.class));
+        registerConversion(Number.class, Short.TYPE, (instance)-> Transformations.toNumber(instance, Short.class));
+        registerConversion(Number.class, Boolean.class, Transformations::toBoolean);
+        registerConversion(Number.class, Boolean.TYPE, Transformations::toBoolean);
+        registerConversion(Number.class, Float.class, (instance)-> Transformations.toNumber(instance, Float.class));
+        registerConversion(Number.class, Float.TYPE, (instance)-> Transformations.toNumber(instance, Float.class));
+        registerConversion(Number.class, Double.class, (instance)-> Transformations.toNumber(instance, Double.class));
+        registerConversion(Number.class, Double.TYPE, (instance)-> Transformations.toNumber(instance, Double.class));
+        registerConversion(Number.class, BigDecimal.class, Transformations::toBigDecimal);
+        registerConversion(Object.class, String.class, Object::toString);
+        registerConversion(Character.class, Boolean.class, Transformations::toBoolean);
+        registerConversion(Number.class, Boolean.class, Transformations::toBoolean);
     }
 
 
-
-    public static String update(String schema, String tableName, String whereColumn, String... columns) {
-        StringBuilder builder = new StringBuilder("UPDATE ").append(getTableName(schema, tableName)).append(" SET ");
-        for (String column : columns) {
-            builder.append(column).append("=?,");
+    static Map<Pair<Class<?>, Class<?>>, TypeTransformer<?, ?>> getConversionRegistry() {
+        if (CONVERSION_REGISTRY == null) {
+            CONVERSION_REGISTRY = new HashMap<>();
         }
-        return builder.deleteCharAt(builder.length()-1).append(" WHERE ").append(whereColumn).append("=?;").toString();
+        return CONVERSION_REGISTRY;
     }
 
-    public static String selectWhere(String schema, String tableName, String operator, String... columns) {
-        StringBuilder builder = new StringBuilder("SELECT  * FROM ").append(getTableName(schema, tableName)).append(" WHERE ");
-        for (String column : columns) {
-            builder.append(column).append(" = ? ").append(operator);
-        }
-        return builder.toString();
+    public static <T, K> void registerConversion(Class<T> source, Class<K> target, TypeTransformer<T, K> transformer) {
+        getConversionRegistry().put(cons((Class<?>) source, (Class<?>) target), transformer);
     }
 
-    public static String getTableName(String schema, String tableName) {
-        StringBuilder builder = new StringBuilder();
-        if (schema != null && !schema.trim().isEmpty()) {
-            builder.append(schema).append('.');
+    static TypeTransformer resolveTransformer(boolean isNull, Class<?> source, Class<?> target) {
+
+
+        TypeTransformer<?, ?> typeTransformer = findWideningTransformer(source, target);
+        if (typeTransformer == null) {
+            return new TypeTransformer() {
+                @Override
+                public Object transform(Object instance) {
+                    if (target.isPrimitive()) {
+                        try {
+                            return target.getField("TYPE").get(null);
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    } else if (isNull) {
+                        return null;
+                    } else {
+                        throw new IllegalArgumentException("No Type Transformer registered for " + source.getName() + "->" + target.getName());
+                    }
+                }
+            };
         }
-        return builder.append(tableName).toString();
+        return typeTransformer;
+    }
+
+    private static TypeTransformer<?, ?> findWideningTransformer(Class<?> source, Class<?> target) {
+        TypeTransformer<?, ?> typeTransformer = getConversionRegistry().get(cons(source, target));
+        if (typeTransformer != null) {
+            return typeTransformer;
+        }
+
+        //do a widening search
+        Pair<Class<?>, Class<?>> transformerKey = getConversionRegistry()
+                .keySet()
+                .stream()
+                .filter(key -> {
+                    boolean sourceAssignable = key.getCar().isAssignableFrom(source);
+                    boolean targetAssignable = key.getCdr().isAssignableFrom(target);
+                    boolean fits = sourceAssignable && targetAssignable;
+                    return fits;
+                })
+                .findFirst().orElse(null);
+        return getConversionRegistry().get(transformerKey);
     }
 
 
-    public static String createTable(String schema, String tableName,  Pair<String, Pair<String, Boolean>> ... columns) {
-        StringBuilder builder = new StringBuilder("CREATE TABLE ").append(getTableName(schema, tableName)).append("(\n");
-        for (Pair<String, Pair<String, Boolean>> column : columns) {
-            builder.append(column.getCar()).append(' ').append(column.getCdr().getCar());
-            if (column.getCdr().getCdr()) {
-                builder.append(" NOT NULL");
-            }
-            builder.append(',');
-        }
-        return builder.deleteCharAt(builder.length()-1).append(");").toString();
-
-    }
-
-    public static String setPrimaryKey(String schema, String tableName, String primaryKeyName,  String... columns) {
-        StringBuilder builder = new StringBuilder("ALTER TABLE ")
-                .append(getTableName(schema, tableName))
-                .append('(')
-                .append("ADD CONSTRAINT ")
-                .append(primaryKeyName)
-                .append(" PRIMARY KEY (");
-        for (String column : columns) {
-            builder.append(column).append(",");
+    public static <T> T convert(Object instance, Class<T> target) {
+        boolean isNull = instance == null;
+        if (!isNull && (target.equals(instance.getClass()) || target.isAssignableFrom(instance.getClass()))) {
+            return (T) instance;
         }
 
-        return builder.deleteCharAt(builder.length()-1).append(");").toString();
-
+        return (T) resolveTransformer(isNull, (isNull) ? null : instance.getClass(), target).transform(instance);
     }
-
 
 }
