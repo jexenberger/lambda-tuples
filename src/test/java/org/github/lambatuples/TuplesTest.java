@@ -203,38 +203,41 @@ Apache License
 */
 package org.github.lambatuples;
 
-import javax.sql.DataSource;
+import org.junit.Test;
+
+import java.util.List;
+import java.util.Map;
+
+import static java.util.stream.Collectors.toList;
+import static org.github.lambatuples.SQL.stream;
+import static org.github.lambatuples.Tuples.groupBy;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
  * User: julian3
- * Date: 2013/11/10
- * Time: 7:13 PM
- * PROJECT: ${PROJECT}
- * DESCRIPTION:
+ * Date: 2013/12/05
+ * Time: 5:40 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class LambdaTuplesContext {
+public class TuplesTest extends HSQLBootStrap {
+
+    @Test
+    public void testGroupBy() throws Exception {
+
+        //test the basic streaming
+        List<? super Integer> persons = (List<? super Integer>) stream(connection, "select distinct(person_id) from testing.persons").map((tuple) -> tuple.asInt("testing.persons.person_id")).collect(toList());
+        Map<Integer, List<Tuple>> result =  groupBy(stream(connection, COMPLEX_SQL), "testing.persons.person_id");
+        System.out.println(result.keySet());
+        result.keySet().forEach((key) -> assertTrue(persons.contains(key)));
+
+        //collection streaming
+        List<Tuple> tuples = result.get(1);
+        List<Tuple> reduced = tuples.stream().map((tuple) -> tuple.reduce("testing.orders.")).collect(toList());
+        Map<Object, List<Tuple>> objectListMap = groupBy(reduced, "testing.orders.order_id");
+        Map<Object, List<Tuple>> orders = objectListMap;
+        System.out.println(orders.keySet());
 
 
-    public static DataSource DATA_SOURCE;
-
-    public static String SCHEMA = null;
-
-
-    public synchronized static void init(DataSource dataSource) {
-        assert dataSource != null;
-        DATA_SOURCE = dataSource;
     }
-
-    public synchronized static void init(String schema, DataSource dataSource) {
-        assert schema != null;
-        init(dataSource);
-    }
-
-    public synchronized static DataSource getDataSource() {
-        return DATA_SOURCE;
-    }
-
-
-
 }

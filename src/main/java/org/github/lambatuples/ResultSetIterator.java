@@ -260,13 +260,17 @@ public class ResultSetIterator implements Iterator<Tuple> {
 
     }
 
-    private void close() {
-        try {
-            rs.close();
+    void close() {
+        if (rs != null) {
             try {
-                ps.close();
+                rs.close();
             } catch (SQLException e) {
-                //nothing we can do here
+
+            }
+        }
+        try {
+            if (ps != null) {
+                ps.close();
             }
         } catch (SQLException e) {
             //nothing we can do here

@@ -206,8 +206,13 @@ package org.github.lambatuples;
 import org.junit.Test;
 
 import java.sql.ResultSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
 import static org.github.lambatuples.Pair.cons;
 import static org.github.lambatuples.SQL.*;
 import static org.github.lambatuples.SQLBuilder.createTable;
@@ -260,6 +265,16 @@ public class SQLTest extends HSQLBootStrap {
                 .count();
         System.out.println(result);
     }
+
+    @Test
+    public void testExec() throws Exception {
+        String result = exec((connection) -> connection.getSchema());
+        System.out.println(result);
+    }
+
+
+
+
 
 }
 

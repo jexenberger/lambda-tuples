@@ -339,6 +339,17 @@ public class DefaultTupleTest {
 
     }
 
+    @Test
+    public void testReduce() throws Exception{
+        Tuple first = new DefaultTuple(tCons("test.one", "yes"),tCons("test.two", 'y'), tCons("two.three",true), tCons("two.four","test"));
+        Tuple reduce = first.reduce("test.");
+        assertTrue(reduce.hasVal("test.one"));
+        assertTrue(reduce.hasVal("test.two"));
+        assertFalse(reduce.hasVal("two.three"));
+        assertFalse(reduce.hasVal("two.four"));
+        System.out.println(reduce);
+    }
+
 
 
 }

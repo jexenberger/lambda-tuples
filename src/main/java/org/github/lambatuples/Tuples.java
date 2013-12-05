@@ -203,38 +203,29 @@ Apache License
 */
 package org.github.lambatuples;
 
-import javax.sql.DataSource;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.groupingBy;
 
 /**
  * Created with IntelliJ IDEA.
  * User: julian3
- * Date: 2013/11/10
- * Time: 7:13 PM
- * PROJECT: ${PROJECT}
- * DESCRIPTION:
+ * Date: 2013/12/05
+ * Time: 5:40 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class LambdaTuplesContext {
+public class Tuples {
 
-
-    public static DataSource DATA_SOURCE;
-
-    public static String SCHEMA = null;
-
-
-    public synchronized static void init(DataSource dataSource) {
-        assert dataSource != null;
-        DATA_SOURCE = dataSource;
+    public static <T> Map<T, List<Tuple>> groupBy(Stream<Tuple> tupleStream, String column) {
+        return tupleStream
+                .collect(groupingBy((Tuple tuple) -> (T) tuple.val(column).get()));
     }
 
-    public synchronized static void init(String schema, DataSource dataSource) {
-        assert schema != null;
-        init(dataSource);
+    public static <T> Map<T, List<Tuple>> groupBy(Collection<Tuple> tupleStream, String column) {
+        return groupBy(tupleStream.stream(), column);
+
     }
-
-    public synchronized static DataSource getDataSource() {
-        return DATA_SOURCE;
-    }
-
-
-
 }

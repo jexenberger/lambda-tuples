@@ -208,6 +208,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Optional.ofNullable;
+import static java.util.stream.Collectors.toList;
 import static org.github.lambatuples.TransformerService.convert;
 
 /**
@@ -320,7 +321,7 @@ public interface Tuple extends Collection<Pair<String, ? extends Object>> {
                     }
                     return false;
                 })
-                .collect(Collectors.toList());
+                .collect(toList());
         return createFrom(result);
     }
 
@@ -334,6 +335,19 @@ public interface Tuple extends Collection<Pair<String, ? extends Object>> {
         });
         return createFrom(mergedCollection);
     }
+
+    public default Tuple set(Pair<String, ?> ... columns) {
+        DefaultTuple newTuple = new DefaultTuple(columns);
+        return newTuple.merge(this);
+    }
+
+
+    public  default Tuple reduce(String suffix) {
+        List<Pair<String, ?>> results =  stream().filter((column) -> column.getCar().toLowerCase().startsWith(suffix.toLowerCase())).collect(toList());
+        return new DefaultTuple(results);
+    }
+
+
 
 
     public default boolean hasVal(String name) {

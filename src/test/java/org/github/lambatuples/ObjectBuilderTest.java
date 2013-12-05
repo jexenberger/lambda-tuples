@@ -223,7 +223,7 @@ public class ObjectBuilderTest {
     public void testAddNewObject() throws Exception {
         Person p = new Person();
         ObjectBuilder
-                .forTuple(new DefaultTuple(tCons("testing.persons.person_id", 1L),tCons("testing.persons.last_name", "Smith")))
+                .forTuple(new DefaultTuple(tCons("testing.persons.person_id", 1L),tCons("testing.persons.last_name", "Smith"),tCons("testing.persons.last_name", false)))
                 .<Long>byId("testing.persons.person_id",p::setId)
                 .<String>map("testing.persons.last_name",p::setSurname)
                 .<String>map("testing.persons.first_name",p::setFirstName)

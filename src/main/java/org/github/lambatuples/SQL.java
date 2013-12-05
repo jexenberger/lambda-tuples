@@ -203,12 +203,14 @@ Apache License
 */
 package org.github.lambatuples;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
+import static java.util.stream.Collectors.groupingBy;
 import static org.github.lambatuples.Pair.cons;
 
 /**
@@ -235,7 +237,7 @@ public class SQL {
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             int cnt = 0;
             for (Object param : params) {
-                ps.setObject(++cnt, param, MAPPINGS.get(param.getClass()));
+                ps.setObject(++cnt, param);
             }
             try (ResultSet rs = ps.executeQuery()) {
                 long rowCnt = 0;
@@ -319,6 +321,21 @@ public class SQL {
             throw new DataAccessException(e);
         }
     }
+
+
+    public static <T extends Object> T exec(SQLAction<T> action) {
+        DataSource dataSource = LambdaTuplesContext.getDataSource();
+        if (dataSource == null) {
+            throw new IllegalStateException("Please set the datasource in "+LambdaTuplesContext.class.getName());
+        }
+        try (Connection connection = dataSource.getConnection()) {
+            return action.exec(connection);
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
+    }
+
+
 
 
     public static Stream<Tuple> stream(final Connection connection, final String sql, final Object... parms) {
